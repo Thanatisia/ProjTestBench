@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">ProjTestBench</string>
+    <string name="app_vers">0.0.1a</string>
+    <string name="tvInfo_Debug_BackupProjectFolder">
+        Debugging:\n
+        Useful for\n
+            - Backing up all data in Project application folder for transfer.
+    </string>
+    <string name="tvInfo_Debug_ExportDBFile">
+        Debugging:\n
+        Useful for\n
+            - Exporting and Backing-up current database in application\n
+                * To change database \n
+            - Save current database by exporting out for reimporting if incorrect changes were made
+    </string>
+    <string name="tvInfo_Debug_ImportDBFile">
+        Debugging:\n
+        Useful for\n
+            - Importing and replacing current database in application\n
+                * with new database for use in application\n
+            - Project/Idea examples:\n
+                1. Database Manager\n
+                    - Import Function to import new database\n
+                        - Read Database\n
+                        - Display table and rows
+    </string>
+</resources>
