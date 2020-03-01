@@ -333,6 +333,26 @@ public class utilities extends AppCompatActivity {
             }
         }
 
+        public Intent package_and_start_Intent(Context c, Activity curr_activity, Class<?> target_class)
+        {
+            /*
+            0 for Toast.LENGTH_SHORT
+            1 for Toast.LENGTH_LONG
+             */
+            int default_Toast_Length = Toast.LENGTH_SHORT;
+
+            //Design Intent
+            Intent this_Intent = create_intent(curr_activity, target_class);
+
+            try {
+                start_intent(c, this_Intent, default_Toast_Length);
+            }
+            catch (Exception ex)
+            {
+                Toast.makeText(c, ex.getMessage(), default_Toast_Length).show();
+            }
+            return this_Intent;
+        }
         public Intent package_and_start_Intent(Context c, Activity curr_activity, Class<?> target_class, String uInput_exception)
         {
             /*
@@ -398,6 +418,55 @@ public class utilities extends AppCompatActivity {
             catch (Exception ex)
             {
                 Toast.makeText(c, ex.getMessage(), toast_Length).show();
+            }
+            return this_Intent;
+        }
+        public Intent package_and_start_Intent(Context c, Activity curr_activity, Class<?> target_class, boolean end_previous_activity)
+        {
+            /*
+            0 for Toast.LENGTH_SHORT
+            1 for Toast.LENGTH_LONG
+             */
+            int default_Toast_Length = Toast.LENGTH_SHORT;
+            boolean default_set_finish = false;
+
+            //Design Intent
+            Intent this_Intent = create_intent(curr_activity, target_class);
+
+            try {
+                start_intent(c, curr_activity, this_Intent, Toast.LENGTH_LONG, end_previous_activity);
+            }
+            catch (Exception ex)
+            {
+                Toast.makeText(c, ex.getMessage(), Toast.LENGTH_LONG).show();
+            }
+            return this_Intent;
+        }
+        public Intent package_and_start_Intent(Context c, Activity curr_activity, Class<?> target_class, String uInput_exception, boolean end_previous_activity)
+        {
+            /*
+            0 for Toast.LENGTH_SHORT
+            1 for Toast.LENGTH_LONG
+             */
+            int default_Toast_Length = Toast.LENGTH_SHORT;
+            boolean default_set_finish = false;
+
+            if(uInput_exception == null)
+            {
+                //Enter default exception message here
+                uInput_exception = "Exception:";
+                uInput_exception += "\n";
+            }
+
+            //Design Intent
+            Intent this_Intent = create_intent(curr_activity, target_class);
+
+            try {
+                start_intent(c, curr_activity, this_Intent, Toast.LENGTH_LONG, end_previous_activity);
+            }
+            catch (Exception ex)
+            {
+                Toast.makeText(c, ex.getMessage(), Toast.LENGTH_LONG).show();
             }
             return this_Intent;
         }
@@ -812,9 +881,13 @@ public class utilities extends AppCompatActivity {
     {
         public static class AccessControlList
         {
-            public void acl()
+            utilToast util_Toast = new utilToast();
+            utilHashMap util_Hashmap = new utilHashMap();
+            public static List<String> default_acl = new ArrayList<>();
+            public List<String> acl(Context c)
             {
-
+                default_acl.add("Hello");
+                return default_acl;
             }
         }
     }

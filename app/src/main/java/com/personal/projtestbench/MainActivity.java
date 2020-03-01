@@ -21,6 +21,7 @@ import android.widget.Toast;
 
 import com.personal.projtestbench.database.dbConstants;
 import com.personal.projtestbench.database.dbUtilities;
+import com.personal.projtestbench.pages.AccessControlListMenu;
 import com.personal.projtestbench.pages.DebugMenu;
 import com.personal.projtestbench.utilities;
 import com.personal.projtestbench.utilities.utilToast;
@@ -85,7 +86,6 @@ public class MainActivity extends AppCompatActivity {
     Button btnDebug_Write_File;
     Button btnChangeActivity_Debug_Menu;
     Button btnChangeActivity_Debug_ACL_Menu;
-
 
     /* Constants */
     String public_external_directory_root = Environment.getExternalStorageDirectory().getAbsolutePath();
@@ -476,7 +476,10 @@ public class MainActivity extends AppCompatActivity {
         btnChangeActivity_Debug_ACL_Menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent_ChangeActivity_GotoDebugRoom = null;
+                MainActivity curr_Activity = MainActivity.this;
+                Class<AccessControlListMenu> next_Activity = AccessControlListMenu.class;
+                util_Intents.package_and_start_Intent(c, curr_Activity, next_Activity);
             }
         });
     }
