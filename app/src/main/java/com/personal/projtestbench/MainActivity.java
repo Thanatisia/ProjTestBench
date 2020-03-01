@@ -30,6 +30,8 @@ import com.personal.projtestbench.utilities.utilHashMap;
 import com.personal.projtestbench.utilities.utilDebugger;
 import com.personal.projtestbench.utilities.utilIntents;
 import com.personal.projtestbench.utilities.utilFiles;
+import com.personal.projtestbench.utilities.utilSecurity;
+import com.personal.projtestbench.utilities.utilSecurity.AccessControlList;
 import com.personal.projtestbench.zipper;
 import com.personal.projtestbench.zipper.ZipDirectory;
 import com.personal.projtestbench.zipper.UnzipFile;
@@ -60,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
     zipper zip;
     UnzipFile unzipper;
     ZipDirectory zipDir;
+    utilSecurity util_Security;
+    AccessControlList acl;
 
     // Device Info
     Context c = this;
@@ -80,6 +84,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnDebug_ImportDB_File;
     Button btnDebug_Write_File;
     Button btnChangeActivity_Debug_Menu;
+    Button btnChangeActivity_Debug_ACL_Menu;
 
 
     /* Constants */
@@ -467,6 +472,13 @@ public class MainActivity extends AppCompatActivity {
                 util_Intents.package_and_start_Intent(c, curr_Activity, next_Activity, null);
             }
         });
+
+        btnChangeActivity_Debug_ACL_Menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
     }
 
     public void init()
@@ -487,6 +499,8 @@ public class MainActivity extends AppCompatActivity {
         util_Debugger = new utilDebugger();
         util_Intents = new utilIntents();
         util_Files = new utilFiles();
+        util_Security = new utilSecurity();
+        acl = new AccessControlList();
         zip = new zipper();
         unzipper = new UnzipFile();
         zipDir = new ZipDirectory();
@@ -505,6 +519,7 @@ public class MainActivity extends AppCompatActivity {
         btnDebug_ImportDB_File = (Button)findViewById(R.id.btn_import_db);
         btnDebug_Write_File = (Button)findViewById(R.id.btn_write_file);
         btnChangeActivity_Debug_Menu = (Button)findViewById(R.id.btn_goto_debug_menu);
+        btnChangeActivity_Debug_ACL_Menu = (Button)findViewById(R.id.btn_goto_access_control_list_menu);
     }
 
 

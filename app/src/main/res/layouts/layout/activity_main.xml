@@ -140,6 +140,14 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/tv_info_debug_import_db" />
+
+                        <Button
+                            android:id="@+id/btn_goto_access_control_list_menu"
+                            android:text="Intent: Change Activity\n - Access Control List (ACL) Room"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/btn_goto_debug_menu" />
+
                     </RelativeLayout>
                 </LinearLayout>
             </ScrollView>

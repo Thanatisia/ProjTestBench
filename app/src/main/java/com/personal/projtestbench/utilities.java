@@ -807,4 +807,15 @@ public class utilities extends AppCompatActivity {
             return filename_without_extension;
         }
     }
+    //====================================================================//
+    public static class utilSecurity
+    {
+        public static class AccessControlList
+        {
+            public void acl()
+            {
+
+            }
+        }
+    }
 }
